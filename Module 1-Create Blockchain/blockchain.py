@@ -28,7 +28,9 @@ class Blockchain:
         self.chain.append(block)
         return block
     
+    def get_previous_block(self):
+        return self.chain[-1]
+    
         
-
 
 # part 2 - Mining our Blockchain
