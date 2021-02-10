@@ -102,3 +102,6 @@ def get_chain():
     response = {'chain': blockchain.chain,
                 'length': len(blockchain.chain)}
     return jsonify(response), 200 # ok http request
+
+# Running the app
+app.run(host = '0.0.0.0', port = 5000)
