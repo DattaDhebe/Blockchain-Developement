@@ -31,6 +31,19 @@ class Blockchain:
     def get_previous_block(self):
         return self.chain[-1]
     
-        
-
+    # Define problem which is hard to solve and easy to verify for mining
+    def proof_of_work(self, previous_proof):
+        new_proof = 1
+        check_proof = False
+        while check_proof is False:
+            hash_operation = hashlib.sha256(str(new_proof**2 - previous_proof**2)
+                                            .encode()).hexdigest()
+            #check if first character 0000
+            if hash_operation[:3] == '0000':
+                check_proof = True
+            else:
+                new_proof += 1
+        return new_proof
+    
+    
 # part 2 - Mining our Blockchain
